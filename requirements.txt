@@ -1,0 +1,18 @@
+# Core dependencies for PyTorch and numerical operations
+torch>=2.0.0  # Required for neural network operations
+             # Includes:
+             # - torch.nn (for nn.Module, nn.Parameter, nn.Linear)
+             # - torch.nn.functional (imported as F)
+             # - torch.optim (for Adam optimizer)
+             # - torch.utils.data (for Dataset, DataLoader)
+numpy>=1.21.0  # Required for numerical operations
+
+# Data processing and utilities
+pathlib>=1.0.1  # For path handling
+json>=3.0.0    # For config file handling
+logging>=0.5.1.2  # For logging training progress and results
+
+# Optional dependencies for development
+pytest>=7.0.0  # For testing
+black>=22.0.0  # For code formatting
+flake8>=4.0.0  # For linting
