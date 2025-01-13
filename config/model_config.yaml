@@ -1,0 +1,29 @@
+# Model Configuration for Learnable Gated Pooling
+
+# Model Parameters
+model:
+  input_dim: 768  # Dimension of input vectors
+  seq_len: 10    # Length of input sequences
+
+# Training Parameters
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 100
+  device: 'cuda'  # or 'cpu'
+
+# Data Parameters
+data:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15  # Automatically calculated as 1 - (train_ratio + val_ratio)
+
+# Directories
+paths:
+  model_dir: 'models'
+  data_dir: 'data'
+  
+# Logging
+logging:
+  level: 'INFO'
+  format: '%(asctime)s - %(levelname)s - %(message)s'
