@@ -27,6 +27,7 @@ jobs:
 
       - name: Run experiment
         run: python src/main.py > data/output.log 2> data/error.log
+        continue-on-error: true
 
       - uses: actions/upload-artifact@v4
         with:
