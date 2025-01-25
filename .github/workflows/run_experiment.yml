@@ -24,7 +24,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: requirements file
+          name: requirements file 2
           path: requirements.txt
           retention-days: 1
 
