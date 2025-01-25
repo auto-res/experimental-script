@@ -1,7 +1,7 @@
 name: Run Experiment
 
 on:
-  push:
+  pull_request:
     branches:
       - 'devin/**'
 
@@ -10,8 +10,8 @@ defaults:
     shell: bash
 
 jobs:
-  runnning-automated-research:
-    name: Running automated research
+  execution-of-automated-research-methods:
+    name: Execution of automated research methods
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
