@@ -5,8 +5,7 @@ name: Run Experiment2
 #     branches:
 #       - 'devin/**'
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 defaults:
   run:
