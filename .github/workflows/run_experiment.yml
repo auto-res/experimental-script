@@ -1,9 +1,13 @@
 name: Run Experiment
 
+# on:
+#   push:
+#     branches:
+#       - 'devin/**'
+
 on:
-  push:
-    branches:
-      - 'devin/**'
+  repository_dispatch:
+    types: [test_workflow]
 
 defaults:
   run:
