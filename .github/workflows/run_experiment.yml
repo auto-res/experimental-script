@@ -6,8 +6,7 @@ name: Run Experiment2
 #       - 'devin/**'
 
 on:
-  repository_dispatch:
-    types: [test_workflow]
+  workflow_dispatch:
 
 defaults:
   run:
