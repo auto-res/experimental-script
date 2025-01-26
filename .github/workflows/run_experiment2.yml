@@ -6,9 +6,9 @@ name: Run Experiment2
 #       - 'devin/**'
 
 on:
-  push:
-    branches:
-      - 'devin/**'
+  # push:
+  #   branches:
+  #     - 'devin/**'
   workflow_dispatch:
 
 defaults:
