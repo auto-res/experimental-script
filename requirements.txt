@@ -1,1 +1,4 @@
 # Please list the required python packages.
+torch==2.2.0
+numpy==1.24.3
+# Add other dependencies as needed
