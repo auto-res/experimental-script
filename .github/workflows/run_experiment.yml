@@ -1,6 +1,10 @@
 name: Execute Experiment
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 defaults:
   run:
@@ -10,7 +14,7 @@ jobs:
   execution-of-automated-research-methods:
     name: Execution of automated research methods
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -23,4 +27,17 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run experiment
-        run: python src/main.py
+        run: python src/main.py > logs/output.txt 2> logs/error.txt
+        continue-on-error: true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: logs/output.txt
+          retention-days: 1
+
+      - uses: actions/upload-artifact@v4
+        with:
+            name: error
+            path: logs/error.txt
+            retention-days: 1
