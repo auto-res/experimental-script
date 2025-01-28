@@ -1,1 +1,1 @@
-# Please list the required python packages.
+torch>=2.0.0\nnumpy>=1.24.0
