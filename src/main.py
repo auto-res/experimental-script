@@ -9,9 +9,17 @@ def main():
     batch_size = 32
     
     sample_data = torch.randn(100, seq_len, input_dim)
-    train_loader = prepare_data(sample_data, batch_size)
+    print(f"Input data shape: {sample_data.shape}")
     
+    train_loader = prepare_data(sample_data, batch_size)
     model = train_model(input_dim, seq_len, train_loader)
+    
+    # Test single forward pass
+    test_batch = sample_data[:batch_size]
+    print(f"Test batch shape: {test_batch.shape}")
+    with torch.no_grad():
+        output = model(test_batch)
+        print(f"Output shape: {output.shape}")
     
     test_data = torch.randn(20, seq_len, input_dim)
     test_loader = prepare_data(test_data, batch_size)

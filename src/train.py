@@ -11,8 +11,8 @@ def train_model(input_dim, seq_len, train_data, num_epochs=10, learning_rate=0.0
         model.train()
         for batch in train_data:
             optimizer.zero_grad()
-            output = model(batch)
-            loss = criterion(output, torch.mean(batch, dim=1))
+            output = model(batch[0])
+            loss = criterion(output, torch.mean(batch[0], dim=1))
             loss.backward()
             optimizer.step()
 
