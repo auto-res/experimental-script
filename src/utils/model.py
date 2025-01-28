@@ -8,8 +8,9 @@ class LearnableGatedPooling(nn.Module):
         self.gate_linear = nn.Linear(input_dim, 1)
 
     def forward(self, x):
-        weighted_x = x * self.weights.unsqueeze(0).unsqueeze(0)
-        gate_values = torch.sigmoid(self.gate_linear(x)).squeeze(-1)
-        gated_x = weighted_x * gate_values.unsqueeze(-1)
-        pooled_vector = torch.mean(gated_x, dim=1)
+        # x shape: [batch_size, seq_len, input_dim]
+        weighted_x = x * self.weights  # weights broadcast automatically
+        gate_values = torch.sigmoid(self.gate_linear(x)).squeeze(-1)  # [batch_size, seq_len]
+        gated_x = weighted_x * gate_values.unsqueeze(-1)  # [batch_size, seq_len, input_dim]
+        pooled_vector = torch.mean(gated_x, dim=1)  # [batch_size, input_dim]
         return pooled_vector
