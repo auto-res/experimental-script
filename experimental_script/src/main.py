@@ -1,7 +1,7 @@
-from preprocess import load_and_preprocess_data
-from train import LearnableGatedPooling, train_model
-from evaluate import evaluate_model
-from config.model_config import ModelConfig
+from .preprocess import load_and_preprocess_data
+from .train import LearnableGatedPooling, train_model
+from .evaluate import evaluate_model
+from ..config.model_config import ModelConfig
 
 def main():
     x_train, y_train = load_and_preprocess_data()

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from typing import Tuple, List
-from config.model_config import ModelConfig
+from ..config.model_config import ModelConfig
 
 class LearnableGatedPooling(nn.Module):
     def __init__(self, input_dim: int):
