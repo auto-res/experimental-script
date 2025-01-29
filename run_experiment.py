@@ -1,10 +1,10 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from models import LearnableGatedPooling
-from train import train_model
-from evaluate import evaluate_model
-from preprocess import create_dataloaders
+from src.models import LearnableGatedPooling
+from src.train import train_model
+from src.evaluate import evaluate_model
+from src.preprocess import create_dataloaders
 
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
