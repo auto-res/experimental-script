@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from models import LearnableGatedPooling
+from .models import LearnableGatedPooling
 
 def train_model(model, train_loader, optimizer, criterion, device):
     model.train()
