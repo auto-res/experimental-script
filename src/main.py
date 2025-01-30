@@ -1,4 +1,6 @@
-# The following is the test code.
-import numpy as np
-a = np.array([1, 2, 3, 4, 5])
-print(a)
+from src.train import train_model
+from src.evaluate import evaluate_model
+
+if __name__ == "__main__":
+    train_model()
+    evaluate_model()
