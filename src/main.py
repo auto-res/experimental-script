@@ -17,7 +17,7 @@ def main():
     history = train_model(model, train_loader, num_epochs, learning_rate)
     
     metrics = evaluate_model(model, test_loader)
-    print(f"Test Loss: {metrics[\"test_loss\"]:.4f}")
+    print(f'Test Loss: {metrics["test_loss"]:.4f}')
 
 if __name__ == "__main__":
     main()
