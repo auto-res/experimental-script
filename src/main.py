@@ -9,15 +9,11 @@ import sys
 import os
 import sys
 
-# Add the project root to Python path
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, project_root)
-
-from src.utils.optimizers import CustomOptimizer
-from src.preprocess import get_mnist_loaders
-from src.train import SimpleConvNet, train_epoch
-from src.evaluate import evaluate
-from config.train_config import TrainConfig
+from experimental_script.src.utils.optimizers import CustomOptimizer
+from experimental_script.src.preprocess import get_mnist_loaders
+from experimental_script.src.train import SimpleConvNet, train_epoch
+from experimental_script.src.evaluate import evaluate
+from experimental_script.config.train_config import TrainConfig
 
 def main():
     config = TrainConfig()
