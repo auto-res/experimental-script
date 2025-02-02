@@ -24,4 +24,4 @@ jobs:
         run: |
           mkdir -p models logs data
           python -m pip install -e .
-          PYTHONPATH=$GITHUB_WORKSPACE python -m experimental_script.main
+          python -m experimental_script
