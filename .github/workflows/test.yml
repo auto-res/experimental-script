@@ -23,4 +23,4 @@ jobs:
       - name: Run test
         run: |
           mkdir -p models logs
-          python -m experimental_script.src.main
+          PYTHONPATH=$GITHUB_WORKSPACE python -c "from experimental_script.src.main import main; main()"
