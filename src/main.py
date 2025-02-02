@@ -7,13 +7,16 @@ import os
 import sys
 from pathlib import Path
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to Python path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
-from ..config.train_config import TrainConfig
-from .utils.optimizers import CustomOptimizer
-from .preprocess import get_mnist_loaders
-from .train import SimpleConvNet, train_epoch
-from .evaluate import evaluate
+from config.train_config import TrainConfig
+from src.utils.optimizers import CustomOptimizer
+from src.preprocess import get_mnist_loaders
+from src.train import SimpleConvNet, train_epoch
+from src.evaluate import evaluate
 
 def main():
     config = TrainConfig()
