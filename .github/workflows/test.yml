@@ -25,4 +25,4 @@ jobs:
           mkdir -p models logs data
           python -m pip install -e .
           cd /home/runner/work/experimental-script/experimental-script
-          PYTHONPATH=/home/runner/work/experimental-script/experimental-script python -m experimental_script
+          python -m experimental_script
