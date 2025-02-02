@@ -1,0 +1,10 @@
+{
+  "objective": "Researching optimizers for fine-tuning LLMs.",
+  "base_method_text": "Baseline method description...",
+  "add_method_text": "Added method description...",
+  "new_method_text": [
+    "New combined method description..."
+  ],
+  "base_method_code": "def base_method(): pass",
+  "add_method_code": "def add_method(): pass"
+}
