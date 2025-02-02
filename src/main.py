@@ -3,17 +3,17 @@ from torch.utils.tensorboard import SummaryWriter
 import os
 from datetime import datetime
 
+import os
 import sys
 from pathlib import Path
 
-# Add parent directory to Python path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from config.train_config import TrainConfig
-from src.utils.optimizers import CustomOptimizer
-from src.preprocess import get_mnist_loaders
-from src.train import SimpleConvNet, train_epoch
-from src.evaluate import evaluate
+from ..config.train_config import TrainConfig
+from .utils.optimizers import CustomOptimizer
+from .preprocess import get_mnist_loaders
+from .train import SimpleConvNet, train_epoch
+from .evaluate import evaluate
 
 def main():
     config = TrainConfig()
