@@ -3,11 +3,15 @@ from torch.utils.tensorboard import SummaryWriter
 import os
 from datetime import datetime
 
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from config.train_config import TrainConfig
-from utils.optimizers import CustomOptimizer
-from preprocess import get_mnist_loaders
-from train import SimpleConvNet, train_epoch
-from evaluate import evaluate
+from src.utils.optimizers import CustomOptimizer
+from src.preprocess import get_mnist_loaders
+from src.train import SimpleConvNet, train_epoch
+from src.evaluate import evaluate
 
 def main():
     config = TrainConfig()
