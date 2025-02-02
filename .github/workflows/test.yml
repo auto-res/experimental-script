@@ -22,5 +22,5 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          mkdir -p experimental_script/models experimental_script/logs experimental_script/data
-          PYTHONPATH=$PYTHONPATH:$(pwd) python3 -m experimental_script
+          mkdir -p models logs data
+          python3 -m experimental_script
