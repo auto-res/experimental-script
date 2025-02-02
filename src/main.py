@@ -2,10 +2,10 @@ import yaml
 import torch
 import torch.nn as nn
 from pathlib import Path
-from src.preprocess import get_mnist_loaders
-from src.train import train_epoch
-from src.evaluate import evaluate
-from src.optimizers.amadgrad import AMADGRADOptimizer
+from .preprocess import get_mnist_loaders
+from .train import train_epoch
+from .evaluate import evaluate
+from .optimizers.amadgrad import AMADGRADOptimizer
 
 class SimpleCNN(nn.Module):
     def __init__(self, in_channels: int, num_classes: int):
