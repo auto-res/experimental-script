@@ -1,0 +1,19 @@
+dataset:
+  name: 'mnist'
+  batch_size: 128
+  num_workers: 2
+
+model:
+  type: 'simple_cnn'
+  in_channels: 1
+  num_classes: 10
+
+optimizer:
+  name: 'amadgrad'
+  lr: 0.01
+  beta_values: [0.9, 0.99, 0.999]
+  eps: 1.0e-8
+
+training:
+  epochs: 10
+  log_interval: 100
