@@ -172,4 +172,5 @@ cython_debug/
 !.gitkeep
 
 data/
-models/
+models/*.pth
+!src/models/
