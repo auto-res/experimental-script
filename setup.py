@@ -4,7 +4,8 @@ setup(
     name="experimental_script",
     version="0.1.0",
     packages=find_packages(),
-    package_data={'experimental_script': ['config/*', 'src/*']},
+    package_data={'experimental_script': ['config/*', 'src/*', 'src/utils/*']},
+    include_package_data=True,
     install_requires=[
         "torch>=2.0.0",
         "torchvision>=0.15.0",

@@ -24,5 +24,6 @@ jobs:
         run: |
           mkdir -p models logs
           cd $GITHUB_WORKSPACE
-          python3 -m pip install -e .
+          python3 -m pip install -e . --no-deps
+          python3 -m pip install -r requirements.txt
           python3 -m experimental_script.src.main
