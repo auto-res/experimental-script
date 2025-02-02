@@ -23,4 +23,4 @@ jobs:
       - name: Run test
         run: |
           mkdir -p experimental_script/models experimental_script/logs experimental_script/data
-          python3 -m experimental_script.main
+          PYTHONPATH=$PYTHONPATH:$(pwd) python3 -m experimental_script.main
