@@ -24,4 +24,5 @@ jobs:
         run: |
           mkdir -p models logs data
           python -m pip install -e .
-          PYTHONPATH=/home/runner/work/experimental-script/experimental-script python -m experimental_script
+          python -c "import experimental_script; print(experimental_script.__file__)"
+          python -m experimental_script
