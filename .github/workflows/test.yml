@@ -23,4 +23,5 @@ jobs:
       - name: Run test
         run: |
           mkdir -p models logs data
-          python3 -m experimental_script
+          python -m pip install -e .
+          python -m experimental_script
