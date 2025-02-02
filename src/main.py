@@ -37,10 +37,10 @@ def main():
     
     optimizer = HybridOptimizer(
         model.parameters(),
-        lr=config['optimizer']['lr'],
+        lr=float(config['optimizer']['lr']),
         betas=config['optimizer']['betas'],
-        weight_decay=config['optimizer']['weight_decay'],
-        eps=config['optimizer']['eps']
+        weight_decay=float(config['optimizer']['weight_decay']),
+        eps=float(config['optimizer']['eps'])
     )
     criterion = nn.CrossEntropyLoss()
     
