@@ -6,6 +6,7 @@ from tqdm import tqdm
 from typing import Dict, Optional
 from torch.utils.data import DataLoader
 from torch.optim import Optimizer
+from .utils.optimizers import CustomOptimizer
 
 class SimpleConvNet(nn.Module):
     def __init__(self):
