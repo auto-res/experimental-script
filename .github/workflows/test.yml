@@ -22,6 +22,5 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          mkdir -p experimental_script/models experimental_script/logs
-          python3 -m pip install -e .
+          mkdir -p experimental_script/models experimental_script/logs experimental_script/data
           python3 -m experimental_script.main
