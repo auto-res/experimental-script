@@ -1,1 +1,1 @@
-# Make experimental_script a Python package
+# Make src directory a Python package

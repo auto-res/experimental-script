@@ -3,10 +3,10 @@ from torch.utils.tensorboard import SummaryWriter
 import os
 from datetime import datetime
 
-from experimental_script.src.utils.optimizers import CustomOptimizer
-from experimental_script.src.preprocess import get_mnist_loaders
-from experimental_script.src.train import SimpleConvNet, train_epoch
-from experimental_script.src.evaluate import evaluate
+from experimental_script.utils.optimizers import CustomOptimizer
+from experimental_script.preprocess import get_mnist_loaders
+from experimental_script.train import SimpleConvNet, train_epoch
+from experimental_script.evaluate import evaluate
 from experimental_script.config.train_config import TrainConfig
 
 def main():
