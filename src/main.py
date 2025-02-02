@@ -65,4 +65,8 @@ def main():
               f'Test Accuracy: {test_metrics["test_accuracy"]:.2f}%')
 
 if __name__ == '__main__':
+    # Add project root to Python path when running directly
+    import os
+    import sys
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     main()
