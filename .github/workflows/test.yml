@@ -22,5 +22,5 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          cd $GITHUB_WORKSPACE
+          mkdir -p models logs
           python -m experimental_script.src.main
