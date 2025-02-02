@@ -5,9 +5,8 @@ from datetime import datetime
 
 import os
 import sys
-
-import os
-import sys
+from torch.utils.tensorboard import SummaryWriter
+from datetime import datetime
 
 from experimental_script.src.utils.optimizers import CustomOptimizer
 from experimental_script.src.preprocess import get_mnist_loaders
