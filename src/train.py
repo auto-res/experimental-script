@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from typing import Dict, Any
-from .optimizers.amadgrad import AMADGRADOptimizer
+from src.optimizers.amadgrad import AMADGRADOptimizer
 
 def train_epoch(model: nn.Module, 
                 train_loader: DataLoader,
