@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 import torch
 
@@ -10,7 +10,7 @@ class TrainConfig:
     
     # Optimizer
     learning_rate: float = 1e-3
-    betas: List[float] = [0.0, 0.99]
+    betas: List[float] = field(default_factory=lambda: [0.0, 0.99])
     weight_decay: float = 0.0
     adaptive_rate: float = 1.0
     
