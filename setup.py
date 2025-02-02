@@ -3,7 +3,8 @@ from setuptools import setup, find_packages
 setup(
     name="experimental_script",
     version="0.1.0",
-    packages=find_packages(),
+    packages=find_packages(include=['experimental_script', 'experimental_script.*']),
+    package_dir={'experimental_script': '.'},
     install_requires=[
         "torch>=2.0.0",
         "torchvision>=0.15.0",
