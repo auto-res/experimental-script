@@ -172,4 +172,6 @@ cython_debug/
 !.gitkeep
 
 data/
-models/
+models/*
+!models/.gitkeep
+!src/models/

@@ -1,1 +1,4 @@
-# Please list the required python packages.
+torch>=2.0.0
+numpy>=1.21.0
+typing-extensions>=4.0.0
+tqdm>=4.65.0
