@@ -26,5 +26,4 @@ jobs:
           cd $GITHUB_WORKSPACE
           python3 -m pip install -e . --no-deps
           python3 -m pip install -r requirements.txt
-          cd experimental_script
-          python3 main.py
+          PYTHONPATH=$GITHUB_WORKSPACE python3 experimental_script/main.py
