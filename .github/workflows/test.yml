@@ -22,4 +22,5 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          PYTHONPATH=$GITHUB_WORKSPACE python -m experimental_script.src.main
+          cd $GITHUB_WORKSPACE
+          python -m experimental_script.src.main
