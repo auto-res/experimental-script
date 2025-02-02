@@ -22,4 +22,4 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          PYTHONPATH=$PYTHONPATH:$(pwd) python src/main.py
+          python src/main.py
