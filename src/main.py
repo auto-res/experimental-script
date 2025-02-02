@@ -3,12 +3,11 @@ from torch.utils.tensorboard import SummaryWriter
 import os
 from datetime import datetime
 
-import os
 import sys
-# Add project root to Python path if not already present
-project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
+from pathlib import Path
+
+# Add parent directory to Python path
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from config.train_config import TrainConfig
 from src.utils.optimizers import CustomOptimizer
