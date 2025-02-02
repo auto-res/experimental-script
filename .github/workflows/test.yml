@@ -22,4 +22,4 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          PYTHONPATH=$PYTHONPATH:$(pwd) python -m experimental_script.src.main
+          python -m experimental_script.src.main
