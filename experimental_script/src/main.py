@@ -9,11 +9,11 @@ import sys
 import os
 import sys
 
-from utils.optimizers import CustomOptimizer
-from preprocess import get_mnist_loaders
-from train import SimpleConvNet, train_epoch
-from evaluate import evaluate
-from config.train_config import TrainConfig
+from experimental_script.src.utils.optimizers import CustomOptimizer
+from experimental_script.src.preprocess import get_mnist_loaders
+from experimental_script.src.train import SimpleConvNet, train_epoch
+from experimental_script.src.evaluate import evaluate
+from experimental_script.config.train_config import TrainConfig
 
 def main():
     config = TrainConfig()
