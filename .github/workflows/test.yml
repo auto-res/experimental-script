@@ -22,4 +22,4 @@ jobs:
           pip install -e .
       - name: Run test
         run: |
-          python src/main.py
+          python experimental_script/src/main.py
