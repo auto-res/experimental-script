@@ -23,7 +23,5 @@ jobs:
       - name: Run test
         run: |
           mkdir -p experimental_script/models experimental_script/logs
-          cd $GITHUB_WORKSPACE
-          python3 -m pip install -e . --no-deps
-          python3 -m pip install -r requirements.txt
-          PYTHONPATH=$GITHUB_WORKSPACE python3 -m experimental_script.main
+          python3 -m pip install -e .
+          python3 -m experimental_script.main
