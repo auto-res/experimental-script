@@ -26,17 +26,34 @@ class AggMoMADGRAD(torch.optim.Optimizer):
                 if p.grad is None:
                     continue
                 grad = p.grad.data
+                if weight_decay != 0:
+                    grad = grad.add(p.data, alpha=weight_decay)
+                
                 state = self.state[p]
                 if 'sum_sq_grad' not in state:
                     state['sum_sq_grad'] = torch.zeros_like(p.data)
                     state['momentums'] = [torch.zeros_like(p.data) for _ in betas]
+                    state['step'] = 0
+                
+                state['step'] += 1
                 sum_sq_grad = state['sum_sq_grad']
                 momentums = state['momentums']
+                
+                # Update sum of squared gradients
                 sum_sq_grad.addcmul_(grad, grad, value=1)
+                
+                # Compute adaptive learning rate
                 rms = sum_sq_grad.sqrt().add_(eps)
-                w = grad.div(rms)
+                adaptive_lr = lr / rms
+                
+                # Initialize update
+                update = grad.mul(adaptive_lr)
+                
+                # Apply momentum
                 for momentum, beta in zip(momentums, betas):
-                    momentum.mul_(beta).add_(grad, alpha=lr)
-                    w.add_(momentum, alpha=lr / len(betas))
-                p.data.add_(-w)
+                    momentum.mul_(beta).add_(grad, alpha=1-beta)
+                    update.add_(momentum, alpha=adaptive_lr)
+                
+                # Apply update
+                p.data.add_(-update)
         return loss
