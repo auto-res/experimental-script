@@ -44,16 +44,15 @@ class AggMoMADGRAD(torch.optim.Optimizer):
                 
                 # Compute adaptive learning rate
                 rms = sum_sq_grad.sqrt().add_(eps)
-                adaptive_lr = lr / rms
                 
                 # Initialize update
-                update = grad.mul(adaptive_lr)
+                update = grad.div(rms)
                 
                 # Apply momentum
                 for momentum, beta in zip(momentums, betas):
                     momentum.mul_(beta).add_(grad, alpha=1-beta)
-                    update.add_(momentum, alpha=adaptive_lr)
+                    update.add_(momentum.div(rms))
                 
-                # Apply update
-                p.data.add_(-update)
+                # Apply update with learning rate
+                p.data.add_(update, alpha=-lr)
         return loss
