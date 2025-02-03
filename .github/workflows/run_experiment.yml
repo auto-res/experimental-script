@@ -21,7 +21,9 @@ jobs:
           cache: "pip"
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
 
       - name: Run experiment
         run: python run_experiment.py > logs/output.txt 2> logs/error.txt
