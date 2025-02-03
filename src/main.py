@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from config.default import OptimizerConfig, TrainingConfig
+from .config.default import OptimizerConfig, TrainingConfig
 from .preprocess import get_mnist_data
 from .train import train_epoch
 from .evaluate import evaluate
