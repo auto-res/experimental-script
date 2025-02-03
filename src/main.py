@@ -1,11 +1,11 @@
 import yaml
 import torch
 from pathlib import Path
-from .models import SimpleCNN
-from .optimizers import AdvancedOptimizer
-from .preprocess import get_dataloaders
-from .train import train_epoch
-from .evaluate import evaluate
+from src.models import SimpleCNN
+from src.optimizers import AdvancedOptimizer
+from src.preprocess import get_dataloaders
+from src.train import train_epoch
+from src.evaluate import evaluate
 
 def main():
     # Load config
