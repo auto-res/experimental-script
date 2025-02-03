@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from .config.default import OptimizerConfig, TrainingConfig
-from .preprocess import get_mnist_data
-from .train import train_epoch
-from .evaluate import evaluate
-from .optimizers.aggmo_madgrad import AggMoMADGRAD
+from src.config.default import OptimizerConfig, TrainingConfig
+from src.preprocess import get_mnist_data
+from src.train import train_epoch
+from src.evaluate import evaluate
+from src.optimizers.aggmo_madgrad import AggMoMADGRAD
 
 class Net(nn.Module):
     def __init__(self):
